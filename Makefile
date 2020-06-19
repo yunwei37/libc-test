@@ -1,3 +1,10 @@
+ifneq ($(ARCH),)
+	PREFIX?=$(ARCH)-linux-musl-
+	CROSS_COMPILE?=$(PREFIX)
+endif
+CC:=$(PREFIX)gcc
+LD:=$(PREFIX)ld
+
 B:=src
 SRCS:=$(sort $(wildcard src/*/*.c))
 OBJS:=$(SRCS:src/%.c=$(B)/%.o)
@@ -125,6 +132,7 @@ cleanall: clean
 	rm -f $(B)/REPORT $(B)/*/REPORT
 $(B)/REPORT:
 	cat $^ >$@
+bin: $(BINS)
 
 $(B)/%.o:: src/%.c
 	$(CC) $(CFLAGS) $($*.CFLAGS) -c -o $@ $< 2>$@.err || echo BUILDERROR $@; cat $@.err
@@ -150,5 +158,5 @@ $(B)/%.exe: $(B)/%.o
 %.err: %.exe
 	$(RUN_TEST) $< >$@ || true
 
-.PHONY: all run clean cleanall
+.PHONY: all run clean cleanall bin
 
