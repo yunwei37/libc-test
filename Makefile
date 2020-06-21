@@ -132,7 +132,7 @@ cleanall: clean
 	rm -f $(B)/REPORT $(B)/*/REPORT
 $(B)/REPORT:
 	cat $^ >$@
-bin: $(BINS)
+build: $(BINS) $(LIBS)
 
 $(B)/%.o:: src/%.c
 	$(CC) $(CFLAGS) $($*.CFLAGS) -c -o $@ $< 2>$@.err || echo BUILDERROR $@; cat $@.err
@@ -158,5 +158,5 @@ $(B)/%.exe: $(B)/%.o
 %.err: %.exe
 	$(RUN_TEST) $< >$@ || true
 
-.PHONY: all run clean cleanall bin
+.PHONY: all run clean cleanall build
 
