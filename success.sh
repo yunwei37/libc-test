@@ -31,6 +31,10 @@ echo mbc
 src/functional/mbc.exe >src/functional/mbc.err || echo mbc failed
 echo memstream
 src/functional/memstream.exe >src/functional/memstream.err || echo memstream failed
+echo pthread_cancel
+src/functional/pthread_cancel.exe >src/functional/pthread_cancel.err || echo pthread_cancel failed
+echo pthread_cancel-points
+src/functional/pthread_cancel-points.exe >src/functional/pthread_cancel-points.err || echo pthread_cancel-points failed
 echo pthread_mutex
 src/functional/pthread_mutex.exe >src/functional/pthread_mutex.err || echo pthread_mutex failed
 echo pthread_tsd
@@ -569,6 +573,8 @@ echo printf-fmt-g-zeros
 src/regression/printf-fmt-g-zeros.exe >src/regression/printf-fmt-g-zeros.err || echo printf-fmt-g-zeros failed
 echo printf-fmt-n
 src/regression/printf-fmt-n.exe >src/regression/printf-fmt-n.err || echo printf-fmt-n failed
+echo pthread_cancel-sem_wait
+src/regression/pthread_cancel-sem_wait.exe >src/regression/pthread_cancel-sem_wait.err || echo pthread_cancel-sem_wait failed
 echo pthread-robust-detach
 src/regression/pthread-robust-detach.exe >src/regression/pthread-robust-detach.err || echo pthread-robust-detach failed
 echo pthread_condattr_setclock
@@ -651,6 +657,8 @@ echo mbc-static
 src/functional/mbc-static.exe >src/functional/mbc-static.err || echo mbc-static failed
 echo memstream-static
 src/functional/memstream-static.exe >src/functional/memstream-static.err || echo memstream-static failed
+echo pthread_cancel-points-static
+src/functional/pthread_cancel-points-static.exe >src/functional/pthread_cancel-points-static.err || echo pthread_cancel-points-static failed
 echo pthread_mutex-static
 src/functional/pthread_mutex-static.exe >src/functional/pthread_mutex-static.err || echo pthread_mutex-static failed
 echo pthread_tsd-static
@@ -777,6 +785,8 @@ echo mkstemp-failure-static
 src/regression/mkstemp-failure-static.exe >src/regression/mkstemp-failure-static.err || echo mkstemp-failure-static failed
 echo printf-1e9-oob-static
 src/regression/printf-1e9-oob-static.exe >src/regression/printf-1e9-oob-static.err || echo printf-1e9-oob-static failed
+echo pthread_cancel-sem_wait-static
+src/regression/pthread_cancel-sem_wait-static.exe >src/regression/pthread_cancel-sem_wait-static.err || echo pthread_cancel-sem_wait-static failed
 echo printf-fmt-g-round-static
 src/regression/printf-fmt-g-round-static.exe >src/regression/printf-fmt-g-round-static.err || echo printf-fmt-g-round-static failed
 echo printf-fmt-g-zeros-static
