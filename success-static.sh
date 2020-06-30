@@ -29,6 +29,8 @@ echo iconv_open-static
 src/functional/iconv_open-static.exe >src/functional/iconv_open-static.err || echo iconv_open-static failed
 echo inet_pton-static
 src/functional/inet_pton-static.exe >src/functional/inet_pton-static.err || echo inet_pton-static failed
+echo ipc_sem-static
+src/functional/ipc_sem-static.exe >src/functional/ipc_sem-static.err || echo ipc_sem-static failed
 echo mbc-static
 src/functional/mbc-static.exe >src/functional/mbc-static.err || echo mbc-static failed
 echo memstream-static

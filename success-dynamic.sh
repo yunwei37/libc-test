@@ -27,6 +27,8 @@ echo iconv_open
 src/functional/iconv_open.exe >src/functional/iconv_open.err || echo iconv_open failed
 echo inet_pton
 src/functional/inet_pton.exe >src/functional/inet_pton.err || echo inet_pton failed
+echo ipc_sem
+src/functional/ipc_sem.exe >src/functional/ipc_sem.err || echo ipc_sem failed
 echo mbc
 src/functional/mbc.exe >src/functional/mbc.err || echo mbc failed
 echo memstream
