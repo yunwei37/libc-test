@@ -2,8 +2,8 @@ ifneq ($(ARCH),)
 	PREFIX?=$(ARCH)-linux-musl-
 	CROSS_COMPILE?=$(PREFIX)
 endif
-CC:=$(PREFIX)gcc
-LD:=$(PREFIX)ld
+CC:=musl-gcc
+LD:=musl-ldd
 
 B:=src
 SRCS:=$(sort $(wildcard src/*/*.c))
